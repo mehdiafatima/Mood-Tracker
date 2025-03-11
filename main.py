@@ -3,7 +3,6 @@ import pandas as pd
 import datetime
 import csv
 import os
-import matplotlib.pyplot as plt
 
 # Constants
 MOOD_FILE = 'mood_log.csv'
