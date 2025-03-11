@@ -56,7 +56,7 @@ st.markdown("""
         .stButton > button:hover {
             transform: scale(1.05);
             box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-          color: white;
+            color: white;
         }
         .stAlert {
             border-radius: 10px;
@@ -88,18 +88,9 @@ if not data.empty:
     data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
 
     # Count occurrences of each mood
-    mood_counts = data["Mood"].value_counts()
+    mood_counts = data.groupby('Mood').count()["Date"]
+    st.bar_chart(mood_counts)
 
-    # Plot mood distribution as a bar chart
-    fig, ax = plt.subplots(figsize=(8, 5))
-    mood_counts.plot(kind='bar', color='skyblue', ax=ax)
-    ax.set_ylabel("Number of Occurrences")
-    ax.set_xlabel("Mood")
-    ax.set_title("Mood Trends Over Time")
-    fig.tight_layout()
-    st.pyplot(fig)
-else:
-    st.warning("⚠️ No mood data available yet. Start logging your mood!")
 st.markdown("""
     <hr style="border: 2px solid #ddd;">
     <h2 style="text-align: center;">Mood-Based Fun Corner!</h2>
@@ -146,8 +137,6 @@ st.markdown("""
     - **Feeling tired?** Wake up with *Eye of the Tiger* by Survivor 🐅
     ---
 """, unsafe_allow_html=True)
-
-
 
 st.markdown("""
     <hr style="border: 2px solid #ddd;">
