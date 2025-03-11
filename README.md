@@ -21,6 +21,7 @@ A simple web-based Mood Tracker built using **Streamlit**, allowing users to log
 - **Log Mood** – Click "Log Mood" to save your entry.
 - **View Mood Trends** – Analyze your moods over time using visual charts.
 - **Explore Fun Corner** – Enjoy jokes, games, and music suggestions based on your mood.
-
-- **Stay Happy & Keep Tracking Your Mood!😊**
+- 
+------
+**Stay Happy & Keep Tracking Your Mood!😊**
 
